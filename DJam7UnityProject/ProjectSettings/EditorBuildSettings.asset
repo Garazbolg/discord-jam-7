@@ -8,4 +8,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Bootstrap.unity
     guid: 4b18dc72967f6a64eae64f16d5f94cdb
+  - enabled: 1
+    path: Assets/Scenes/Menus/Splash.unity
+    guid: cfe3922a83a58d345a5f43f9e4cce74e
+  - enabled: 1
+    path: Assets/Scenes/Menus/LevelSelection.unity
+    guid: 87a023d9b40ca094b98f775fecc074f8
+  - enabled: 1
+    path: Assets/Scenes/Menus/MainMenu.unity
+    guid: 7774c552364951640931ff1b90f3cd62
+  - enabled: 1
+    path: Assets/Scenes/GameEditor/EditorPlayer.unity
+    guid: bc974e43f3af2e34ab6ce20411b3d29d
+  - enabled: 1
+    path: Assets/Scenes/Game/Camera.unity
+    guid: 285eaec93e4e596449e37fdebfb8db2c
+  - enabled: 1
+    path: Assets/Scenes/Game/GameGeneral.unity
+    guid: 485271c758c67334391cb9033111e389
+  - enabled: 1
+    path: Assets/Scenes/Game/Map.unity
+    guid: 2431bfcf58aca4f4e83af7e1a042c21b
+  - enabled: 1
+    path: Assets/Scenes/Game/Player.unity
+    guid: 96186f18d696d48418dba60ee780576b
+  - enabled: 1
+    path: Assets/Scenes/Game/UI.unity
+    guid: cf02e4a81490ff04a84e0c4e4807c831
   m_configObjects: {}

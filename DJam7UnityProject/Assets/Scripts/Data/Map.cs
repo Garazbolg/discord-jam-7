@@ -5,7 +5,7 @@
 public class Map : ScriptableObject
 {
     public Vector2Int size;
-    public TileSet tileSet;
+    public BrushSet overrideSet;
     public TileArray[] tiles;
 
     public MapView view;

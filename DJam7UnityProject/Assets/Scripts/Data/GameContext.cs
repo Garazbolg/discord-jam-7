@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 [System.Serializable]
@@ -31,6 +33,8 @@ public class GameContext
             GetComboTargets(pos);
         }
 
+        UnityEngine.Debug.Log($"Visited count: {visitedPoints.Count}");
+
         int sum = 0;
         int sumStars = 0;
         foreach (var pos in visitedPoints)
@@ -39,7 +43,7 @@ public class GameContext
             sumStars += GetStarCount(pos);
         }
 
-        return sum * sumStars;
+        return sum * (1+sumStars);
     }
 
     private void GetComboTargets(Vector2Int position)

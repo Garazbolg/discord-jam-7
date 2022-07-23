@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
             var comand = currentBrush.GetCommand(GameManager.Instance.context, position);
             comand.Do(GameManager.Instance.context);
             done.Push(comand);
+            currentBrush = set.brushes[Random.Range(0, set.brushes.Length)];
         }
 
         if (done.Count > 0 && Input.GetMouseButtonDown(2))

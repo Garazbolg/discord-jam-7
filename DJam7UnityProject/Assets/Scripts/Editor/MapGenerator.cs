@@ -11,11 +11,9 @@ public class MapGenerator: ScriptableObject
     [ContextMenu("Create Map")]
     public void CreateMap()
     {
-        if (tileSet == null) return;
         Map map = CreateInstance<Map>();
         map.name = mapName;
         map.size = size;
-        map.tileSet = tileSet;
         map.tiles = new Map.TileArray[size.x];
         for (int i = 0; i < size.x; i++)
         {

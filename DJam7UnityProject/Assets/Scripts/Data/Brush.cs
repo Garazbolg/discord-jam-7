@@ -29,6 +29,7 @@ public class Brush : ScriptableObject
 
     public bool CanUse(GameContext context, Vector2Int position)
     {
+        var flag = false;
         foreach (var td in tiles)
         {
             var t = td.tile;
@@ -37,8 +38,19 @@ public class Brush : ScriptableObject
                 return false;
             if (!t.canOverrideTiles.Contains(target))
                 return false;
+
+            if (flag) continue;
+            foreach (var dir in context.constants.directions)
+            {
+                var adj = context.state.GetTileAt(position + td.destination + dir);
+                if (adj.propagatesTo.Contains(t))
+                {
+                    flag = true;
+                    break;
+                }
+            }
         }
-        return true;
+        return flag;
     }
 
     public BrushCommand GetCommand(GameContext context, Vector2Int position)

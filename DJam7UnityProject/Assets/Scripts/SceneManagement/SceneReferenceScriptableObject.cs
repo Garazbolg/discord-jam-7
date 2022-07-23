@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,11 +12,15 @@ public class SceneReferenceScriptableObject : ScriptableObject
 #endif
 
     public string scenePath;
+    public string SceneName;
 
     public void LoadAdditive()
     {
 #if UNITY_EDITOR
-        UnityEditor.SceneManagement.EditorSceneManager.OpenScene(scenePath, UnityEditor.SceneManagement.OpenSceneMode.Additive);
+        if(EditorApplication.isPlaying)
+            SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
+        else
+            UnityEditor.SceneManagement.EditorSceneManager.OpenScene(scenePath, UnityEditor.SceneManagement.OpenSceneMode.Additive);
 #else
         SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
 #endif
@@ -24,7 +29,10 @@ public class SceneReferenceScriptableObject : ScriptableObject
     public void Unload()
     {
 #if UNITY_EDITOR
-        UnityEditor.SceneManagement.EditorSceneManager.CloseScene(UnityEditor.SceneManagement.EditorSceneManager.GetSceneByPath(scenePath),true);
+        if(EditorApplication.isPlaying)
+            SceneManager.UnloadSceneAsync(SceneName,UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
+        else
+            UnityEditor.SceneManagement.EditorSceneManager.CloseScene(UnityEditor.SceneManagement.EditorSceneManager.GetSceneByPath(scenePath),true);
 #else
         SceneManager.UnloadSceneAsync(SceneName,UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
 #endif
@@ -33,5 +41,6 @@ public class SceneReferenceScriptableObject : ScriptableObject
     private void OnValidate()
     {
         scenePath = SceneAsset == null ? "" : UnityEditor.AssetDatabase.GetAssetPath(SceneAsset);
+        SceneName = SceneAsset == null ? "" : SceneAsset.name;
     }
 }
