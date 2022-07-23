@@ -273,4 +273,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   views: []
-  propagationDelay: 0.2
+  propagationDelay: 0.1
