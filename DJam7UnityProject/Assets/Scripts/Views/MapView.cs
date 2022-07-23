@@ -13,7 +13,24 @@ public class MapView : MonoBehaviour
         {
             var tileView = Instantiate(GameManager.Instance.context.constants.TilePrefab,go.transform);
             tileView.transform.localPosition = new Vector3(td.destination.x, td.destination.y);
-            tileView.SetSprite(td.tile.image);
+            tileView.SetSprite(td.tile.image,2);
+        }
+
+        return go;
+    }
+
+    public GameObject CreateBrushObject(Brush brush, Vector2Int position, bool isValid = true)
+    {
+        var prefab = isValid
+            ? GameManager.Instance.context.constants.TilePrefab
+            : GameManager.Instance.context.constants.InvalidTilePrefab;
+        var go = new GameObject();
+        go.transform.position = new Vector3(position.x, position.y);
+        foreach (var td in brush.tiles)
+        {
+            var tileView = Instantiate(prefab,go.transform);
+            tileView.transform.localPosition = new Vector3(td.destination.x, td.destination.y);
+            tileView.SetSprite(td.tile.image,4);
         }
 
         return go;
@@ -34,7 +51,7 @@ public class MapView : MonoBehaviour
                 go.transform.parent = transform;
                 go.transform.position = new Vector3(i, j);
                 var tileView = Instantiate(GameManager.Instance.context.constants.TilePrefab, go.transform);
-                tileView.SetSprite(tile.image);
+                tileView.SetSprite(tile.image,0);
             }
         }
     }

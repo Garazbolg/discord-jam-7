@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3912276874088556105}
+  backSpriteRenderer: {fileID: 8251650474267569712}
 --- !u!1 &3912276874088556107
 GameObject:
   m_ObjectHideFlags: 0

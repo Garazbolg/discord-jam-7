@@ -25,6 +25,7 @@ public class BrushCommand
             context.state.SetTileAt(pos,td.tile);
             positions.Add(pos);
         }
+        instantiatedBrush = context.state.view.CreateBrushObject(this);
         pointsGained = context.ComputeScoreFor(positions);
 
         oldTiles = olds.ToArray();

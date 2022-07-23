@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 084603cda6a381a4e809a46c584fd692, type: 3}
-  m_Name: GameContext
+  m_Script: {fileID: 11500000, guid: fe6950d486d74c84588952793a3cbe33, type: 3}
+  m_Name: SingleRed
   m_EditorClassIdentifier: 
-  constants: {fileID: 11400000, guid: 9e407f58876adaf4fb41a50ff1c73b99, type: 2}
-  state: {fileID: 11400000, guid: 092909d328a43474c8caf62713fce427, type: 2}
-  score: 0
+  size: {x: 0, y: 0}
+  tiles:
+  - tile: {fileID: 11400000, guid: 1e3bb2ef9f7ec28479751a785dab17b7, type: 2}
+    destination: {x: 0, y: 0}

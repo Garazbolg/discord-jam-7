@@ -4,8 +4,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Game/New Brush")]
 public class Brush : ScriptableObject
 {
-    public Vector2Int size;
-    
     [System.Serializable]
     public struct TileDestination
     {
@@ -15,9 +13,18 @@ public class Brush : ScriptableObject
 
     public TileDestination[] tiles;
 
-    public void RotateBrush(bool clockwise)
+    public void RotateBrush()
     {
-        throw new System.NotImplementedException();
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            tiles[i].destination = RotateVector(tiles[i].destination);
+        }
+    }
+
+    public static Vector2Int RotateVector(Vector2Int source)
+    {
+        // Clockwise rotation
+        return new Vector2Int(source.y, -source.x);
     }
 
     public bool CanUse(GameContext context, Vector2Int position)

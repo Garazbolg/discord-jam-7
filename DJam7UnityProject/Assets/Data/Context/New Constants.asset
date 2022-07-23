@@ -18,3 +18,4 @@ MonoBehaviour:
   - {x: -1, y: 0}
   - {x: 0, y: -1}
   TilePrefab: {fileID: 3912276873385490014, guid: 1d0a11341e9ac3b42b5d0fdb0ef7c9ad, type: 3}
+  InvalidTilePrefab: {fileID: 3692862718731588277, guid: a08a0036f6ef4314aa12a3f9cb5b3329, type: 3}

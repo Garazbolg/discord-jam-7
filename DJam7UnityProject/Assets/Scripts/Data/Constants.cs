@@ -5,4 +5,5 @@ public class Constants : ScriptableObject
 {
     public Vector2Int[] directions;
     public TileView TilePrefab;
+    public TileView InvalidTilePrefab;
 }
