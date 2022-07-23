@@ -7,6 +7,7 @@ using UnityEngine;
 public class EditorPlayerController : PlayerController
 {
     public int index = 0;
+    protected override bool isEditor => true;
 
     protected override void Start()
     {

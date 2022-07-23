@@ -27,16 +27,16 @@ public class Brush : ScriptableObject
         return new Vector2Int(source.y, -source.x);
     }
 
-    public bool CanUse(GameContext context, Vector2Int position)
+    public bool CanUse(GameContext context, Vector2Int position, bool isEditor = false)
     {
-        var flag = false;
+        var flag = isEditor;
         foreach (var td in tiles)
         {
             var t = td.tile;
             var target = context.state.GetTileAt(position + td.destination);
             if (target == null)
                 return false;
-            if (!t.canOverrideTiles.Contains(target))
+            if (!isEditor && !t.canOverrideTiles.Contains(target))
                 return false;
 
             if (flag) continue;

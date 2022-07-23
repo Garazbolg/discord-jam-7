@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     private readonly Stack<BrushCommand> done = new Stack<BrushCommand>();
     private GameObject preview;
 
-
+    protected virtual bool isEditor => false;
+    
     protected virtual void Start()
     {
         cam = Camera.main;
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
         var point = cam.ScreenToWorldPoint(Input.mousePosition);
         point += Vector3.one/2; //Offset because tile pivot is center
         var position = new Vector2Int(Mathf.FloorToInt(point.x), Mathf.FloorToInt(point.y));
-        bool usable = currentBrush.CanUse(GameManager.Instance.context, position);
+        bool usable = currentBrush.CanUse(GameManager.Instance.context, position,isEditor);
 
         if(preview != null)
             Destroy(preview);
