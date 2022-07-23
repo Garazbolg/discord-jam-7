@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0fe508c1fec3c648b3265033432313e, type: 3}
-  m_Name: MapToLoad
+  m_Script: {fileID: 11500000, guid: fe6950d486d74c84588952793a3cbe33, type: 3}
+  m_Name: SingleGround
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: 1b8172b30e8509e4fa71e662b78c1c3d, type: 2}
+  tiles:
+  - tile: {fileID: 11400000, guid: b70cd85d5cf3b1849bdf3740b63c5a33, type: 2}
+    destination: {x: 0, y: 0}

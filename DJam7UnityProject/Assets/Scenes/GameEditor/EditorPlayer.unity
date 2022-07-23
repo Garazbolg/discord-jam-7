@@ -132,7 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 849204382}
-  - component: {fileID: 849204383}
+  - component: {fileID: 849204384}
+  - component: {fileID: 849204385}
   m_Layer: 0
   m_Name: PlayerBrush
   m_TagString: Untagged
@@ -155,7 +156,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &849204383
+--- !u!114 &849204384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +165,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 849204381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3914966eac72f644a85d056e8f56a9cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 39215750363dd0a408171879addefe14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &849204385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849204381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad745910eb7226241b8632d09a16f20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   set: {fileID: 11400000, guid: 39541c8487568964e84bcbc88f828d23, type: 2}

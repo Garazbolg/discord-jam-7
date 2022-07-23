@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc5fd486bb081034a8a572935a0067e2, type: 3}
+  m_Name: EditorSet
+  m_EditorClassIdentifier: 
+  brushes:
+  - {fileID: 11400000, guid: 2d5676252af693842b509185ba4a15ab, type: 2}
+  - {fileID: 11400000, guid: e60f56db413674a479db2ed47aa9830e, type: 2}
+  - {fileID: 11400000, guid: b9914b7695659614facf9460c64ec9a9, type: 2}
+  - {fileID: 11400000, guid: f5a8715007acf7b4b83593eeaff6fc4d, type: 2}
+  - {fileID: 11400000, guid: 4461ed4363d39e045acec3764329a18d, type: 2}
+  - {fileID: 11400000, guid: a2532f57a9d3d664ba26df3cd0bee570, type: 2}
+  - {fileID: 11400000, guid: bca54df4085f38c45b9742ea52df740a, type: 2}

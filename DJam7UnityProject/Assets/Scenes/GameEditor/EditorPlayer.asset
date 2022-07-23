@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0fe508c1fec3c648b3265033432313e, type: 3}
-  m_Name: MapToLoad
+  m_Script: {fileID: 11500000, guid: 1b9644ff7415cfb46a1a58358ab5790c, type: 3}
+  m_Name: EditorPlayer
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: 1b8172b30e8509e4fa71e662b78c1c3d, type: 2}
+  SceneAsset: {fileID: 102900000, guid: bc974e43f3af2e34ab6ce20411b3d29d, type: 3}
+  scenePath: Assets/Scenes/GameEditor/EditorPlayer.unity

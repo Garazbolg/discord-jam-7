@@ -2,22 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
-    public Brush currentBrush;
+    public BrushSet set;
+    public bool randomFirst = false;
+    
+    protected Brush currentBrush;
     private Camera cam;
-
-    public Stack<BrushCommand> done = new Stack<BrushCommand>();
-
+    private readonly Stack<BrushCommand> done = new Stack<BrushCommand>();
     private GameObject preview;
 
-    private void Start()
+
+    protected virtual void Start()
     {
         cam = Camera.main;
+        currentBrush = randomFirst ? set.brushes[Random.Range(0,set.brushes.Length)]: set.brushes[0];
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         var point = cam.ScreenToWorldPoint(Input.mousePosition);
         point += Vector3.one/2; //Offset because tile pivot is center
