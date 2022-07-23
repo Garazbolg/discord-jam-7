@@ -58,3 +58,5 @@
 # Crashlytics generated file
 /DJam7UnityProject/crashlytics-build.properties
 
+
+**/.idea/
