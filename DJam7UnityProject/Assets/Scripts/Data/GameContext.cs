@@ -30,7 +30,7 @@ public class GameContext
         visitedPoints.Clear();
         foreach (var pos in modifiedPositions)
         {
-            GetComboTargets(pos);
+            GetComboTargets(pos,state.GetTileAt(pos));
         }
 
         UnityEngine.Debug.Log($"Visited count: {visitedPoints.Count}");
@@ -46,7 +46,7 @@ public class GameContext
         return sum * (1+sumStars);
     }
 
-    private void GetComboTargets(Vector2Int position)
+    private void GetComboTargets(Vector2Int position, TileAsset tileBase)
     {
         if (visitedPoints.Contains(position)) return;
         var t1 = state.GetTileAt(position);
@@ -59,8 +59,8 @@ public class GameContext
             var t2 = state.GetTileAt(pos2);
             if (t2 == null) continue;
 
-            if (t1.propagatesTo.Contains(t2))
-                GetComboTargets(pos2);
+            if (tileBase.propagatesTo.Contains(t2))
+                GetComboTargets(pos2, tileBase);
         }
     }
 
