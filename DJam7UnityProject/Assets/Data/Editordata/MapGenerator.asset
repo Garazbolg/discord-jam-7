@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f969d7edc5eae6e43a19a57c7fdb031b, type: 3}
+  m_Name: MapGenerator
+  m_EditorClassIdentifier: 
+  size: {x: 15, y: 15}
+  tileSet: {fileID: 11400000, guid: be6e08b10d2661f4c933893a563db439, type: 2}
+  mapName: BaseMap
