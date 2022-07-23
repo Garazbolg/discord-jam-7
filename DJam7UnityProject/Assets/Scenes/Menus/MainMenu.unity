@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa648eabd7abf62449ea4fbcfb70974f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toLoad: {fileID: 0}
+  toLoad: {fileID: 11400000, guid: 070593c28eeb2e8449f7e227cc402933, type: 2}
   buttonText: {fileID: 0}
   ID: 0
   mapToLoad: {fileID: 11400000, guid: 1b8172b30e8509e4fa71e662b78c1c3d, type: 2}
