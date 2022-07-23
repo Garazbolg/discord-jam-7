@@ -33,7 +33,7 @@ public class MapView : MonoBehaviour
         tileView.transform.position = new Vector3(x,y);
         tileView.SetSprite(tile.image, spriteOrder);
         if(views[x].Views[y] != null)
-            Destroy(views[x].Views[y]);
+            Destroy(views[x].Views[y].gameObject);
         views[x].Views[y] = tileView;
     }
 
