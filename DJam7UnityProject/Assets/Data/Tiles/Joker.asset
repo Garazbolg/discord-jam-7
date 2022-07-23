@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae6f8a33c25f594e830f0fb4538cd28, type: 3}
   m_Name: Joker
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 62f6369f6bbde614aa7d559823c32322, type: 3}
+  image: {fileID: 21300000, guid: d2141c0d23ab56844abd95bd6092c5e6, type: 3}
   prefab: {fileID: 0}
   canOverrideTiles:
   - {fileID: 11400000, guid: b70cd85d5cf3b1849bdf3740b63c5a33, type: 2}
