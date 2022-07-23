@@ -25,25 +25,30 @@ public class GameContext
         state = ScriptableObject.Instantiate<Map>(map);
     }
 
-    public int ComputeScoreFor(List<Vector2Int> modifiedPositions)
+    public int ComputeScoreFor(List<Vector2Int> affected)
     {
-        visitedPoints.Clear();
-        foreach (var pos in modifiedPositions)
-        {
-            GetComboTargets(pos,state.GetTileAt(pos));
-        }
-
-        UnityEngine.Debug.Log($"Visited count: {visitedPoints.Count}");
-
         int sum = 0;
         int sumStars = 0;
-        foreach (var pos in visitedPoints)
+        foreach (var pos in affected)
         {
             sum += state.GetTileAt(pos).scoreValue;
             sumStars += GetStarCount(pos);
         }
 
         return sum * (1+sumStars);
+    }
+
+    public List<Vector2Int> GetAffected(List<Vector2Int> modifiedPositions)
+    {
+        visitedPoints.Clear();
+        foreach (var pos in modifiedPositions)
+        {
+            GetComboTargets(pos, state.GetTileAt(pos));
+        }
+        var list = new List<Vector2Int>(visitedPoints);
+        visitedPoints.Clear();
+
+        return list;
     }
 
     private void GetComboTargets(Vector2Int position, TileAsset tileBase)

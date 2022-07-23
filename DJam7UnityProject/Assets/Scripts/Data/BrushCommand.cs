@@ -8,8 +8,6 @@ public class BrushCommand
     public Brush.TileDestination[] oldTiles;
     public int pointsGained;
 
-    public GameObject instantiatedBrush;
-
     public void Do(GameContext context)
     {
         List<Vector2Int> positions = new List<Vector2Int>();
@@ -25,8 +23,10 @@ public class BrushCommand
             context.state.SetTileAt(pos,td.tile);
             positions.Add(pos);
         }
-        instantiatedBrush = context.state.view.CreateBrushObject(this);
-        pointsGained = context.ComputeScoreFor(positions);
+        context.state.view.CreateBrushObject(this,false);
+        var affected = context.GetAffected(positions);
+        context.state.view.PropagateAnim(affected,position);
+        pointsGained = context.ComputeScoreFor(affected);
         context.score += pointsGained;
 
         oldTiles = olds.ToArray();
@@ -39,9 +39,7 @@ public class BrushCommand
             var pos = position + td.destination;
             context.state.SetTileAt(pos, td.tile);
         }
-        GameObject.Destroy(instantiatedBrush);
+        context.state.view.CreateBrushObject(this, true);
         context.score -= pointsGained;
     }
-
-    
 }
