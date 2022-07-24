@@ -108,7 +108,8 @@ public class PlayerController : MonoBehaviour
         while(time < rotationDuration)
         {
             time += Time.deltaTime;
-            preview.transform.rotation = Quaternion.Euler(0, 0, -90 * (time / rotationDuration));
+            if(preview != null)
+                preview.transform.rotation = Quaternion.Euler(0, 0, -90 * (time / rotationDuration));
             yield return null;
         }
 
