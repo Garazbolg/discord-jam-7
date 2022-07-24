@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private bool enablePlayer = true;
 
     protected virtual bool isEditor => false;
+
+    protected virtual bool IsInputPlace => Input.GetMouseButtonDown(0);
     
     protected virtual IEnumerator Start()
     {
@@ -29,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(cam == null || !enablePlayer) return;
+        if(cam == null || !enablePlayer || currentBrush == null || GameManager.Instance == null) return;
         
         var point = cam.ScreenToWorldPoint(Input.mousePosition);
         point += Vector3.one/2; //Offset because tile pivot is center
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetMouseButtonDown(1))
             Rotate();
 
-        if (usable && Input.GetMouseButtonDown(0))
+        if (usable && IsInputPlace)
         {
             var comand = currentBrush.GetCommand(GameManager.Instance.context, position);
             comand.Do(GameManager.Instance.context);

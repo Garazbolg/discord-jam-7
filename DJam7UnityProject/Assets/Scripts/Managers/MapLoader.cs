@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-900)]
 public class MapLoader : MonoBehaviour
 {
     public MapToLoad toLoad;
@@ -9,6 +10,8 @@ public class MapLoader : MonoBehaviour
 
     IEnumerator Start()
     {
+        if (toLoad.map == null)
+            toLoad.map = toLoad.defaultMap;
         GameManager.Instance.context.LoadMap(toLoad.map);
         GameManager.Instance.context.state.view = mapView;
         mapView.Init();

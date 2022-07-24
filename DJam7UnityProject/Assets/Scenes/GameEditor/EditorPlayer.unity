@@ -170,5 +170,5 @@ MonoBehaviour:
   set: {fileID: 11400000, guid: 39541c8487568964e84bcbc88f828d23, type: 2}
   randomFirst: 0
   rotationDuration: 0
-  placementDuration: 0.3
-  currentBrush: {fileID: 0}
+  placementDuration: 0
+  currentBrush: {fileID: 11400000, guid: 32f8af44fe89e9245907d8c6b756d375, type: 2}

@@ -31,11 +31,16 @@ public class OpenMapEditor : UnityEditor.EditorWindow
         Open((Map)Selection.activeObject,true);
     }
 
-    public static void Open(Map state, bool isEditor)
+    async public static void Open(Map state, bool isEditor)
     {
+        EditorApplication.isPlaying = false;
+        await System.Threading.Tasks.Task.Delay(100);
+        AssetDatabase.StartAssetEditing();
         var mapToLoad = AssetDatabase.LoadAssetAtPath<MapToLoad>("Assets/Data/Context/MapToLoad.asset");
         mapToLoad.map = state;
-        
+        AssetDatabase.StopAssetEditing();
+        EditorUtility.SetDirty(mapToLoad);
+
         Open(AssetDatabase.LoadAssetAtPath<ApplicationState>(
             isEditor ? "Assets/Data/ApplicationStates/EditTimeEditor.asset"
             : "Assets/Data/ApplicationStates/Game.asset"));

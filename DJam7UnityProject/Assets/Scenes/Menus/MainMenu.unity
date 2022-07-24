@@ -1069,7 +1069,7 @@ MonoBehaviour:
   toLoad: {fileID: 11400000, guid: 070593c28eeb2e8449f7e227cc402933, type: 2}
   buttonText: {fileID: 0}
   ID: 0
-  mapToLoad: {fileID: 11400000, guid: 1b8172b30e8509e4fa71e662b78c1c3d, type: 2}
+  mapToLoad: {fileID: 11400000, guid: e381fe7f978db1f4384fff514b819953, type: 2}
 --- !u!1001 &1128818797
 PrefabInstance:
   m_ObjectHideFlags: 0

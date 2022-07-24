@@ -9,7 +9,7 @@ public class FadeComponent : MonoBehaviour
 {
     public bool FadeOnStart = false;
     public Image targetGraphics;
-    public float FadeDuration = 2f;
+    public float FadeDuration => 1f;
 
     public UnityEvent afterFade;
 

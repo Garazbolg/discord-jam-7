@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MapToLoad
   m_EditorClassIdentifier: 
   map: {fileID: 11400000, guid: f476b538fe4f8fc4eb979a878263c004, type: 2}
+  defaultMap: {fileID: 11400000, guid: f476b538fe4f8fc4eb979a878263c004, type: 2}

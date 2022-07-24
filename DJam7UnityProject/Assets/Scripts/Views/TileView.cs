@@ -13,6 +13,7 @@ public class TileView : MonoBehaviour
     [NonSerialized] public Transform oldTileParent;
 
     public AnimationCurve heightAnim;
+    [Min(.01f)]
     public float duration = 1f;
 
     public void SetSprite(Sprite sprite, int order)
@@ -40,7 +41,6 @@ public class TileView : MonoBehaviour
             spriteRenderer.transform.position = finalPos + Vector3.up * heightAnim.Evaluate(time / duration);
             yield return null;
         }
-
         spriteRenderer.transform.position = finalPos;
         yield return null;
     }

@@ -6,4 +6,5 @@ using UnityEngine;
 public class MapToLoad : ScriptableObject
 {
     public Map map;
+    public Map defaultMap;
 }
