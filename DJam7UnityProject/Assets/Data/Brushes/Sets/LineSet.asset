@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc5fd486bb081034a8a572935a0067e2, type: 3}
+  m_Name: LineSet
+  m_EditorClassIdentifier: 
+  nextMethod: 0
+  brushes:
+  - {fileID: 11400000, guid: 3d69d06b267b9994aaa526714012b7bf, type: 2}
+  - {fileID: 11400000, guid: 50f5892b3f8507d46bd49f9aa3b6dc0b, type: 2}
+  - {fileID: 11400000, guid: 6d7959e36e0ced24fa469f7a7999b47b, type: 2}
+  - {fileID: 11400000, guid: d30866b712c673b4ca76355203f24865, type: 2}
+  - {fileID: 11400000, guid: edccbd477ee31c34cb2e31ee103b714c, type: 2}
