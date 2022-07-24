@@ -8,12 +8,15 @@ public class PlayerController : MonoBehaviour
 {
     public BrushSet set;
     public bool randomFirst = false;
+    public float rotationDuration;
+    public float placementDuration;
     
     public Brush currentBrush;
     private Camera cam = null;
     private readonly Stack<BrushCommand> done = new Stack<BrushCommand>();
     private readonly Stack<BrushCommand> unDone = new Stack<BrushCommand>();
     private GameObject preview;
+    private bool enablePlayer = true;
 
     protected virtual bool isEditor => false;
     
@@ -26,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(cam == null) return;
+        if(cam == null || !enablePlayer) return;
         
         var point = cam.ScreenToWorldPoint(Input.mousePosition);
         point += Vector3.one/2; //Offset because tile pivot is center
@@ -49,6 +52,7 @@ public class PlayerController : MonoBehaviour
             unDone.Clear();
             if(!isEditor)
                 currentBrush = set.brushes[Random.Range(0, set.brushes.Length)];
+            StartCoroutine(PlacementAnim());
         }
 
         if (done.Count > 0 && Input.GetMouseButtonDown(2))
@@ -56,6 +60,8 @@ public class PlayerController : MonoBehaviour
             Undo();
         }
     }
+
+    #region Commands
     public bool CanUndo()
     {
         return done.Count > 0;
@@ -86,8 +92,38 @@ public class PlayerController : MonoBehaviour
 
     public void Rotate()
     {
+        StartCoroutine(RotateAnim());
         currentBrush.RotateBrush();
     }
+    #endregion
 
-    
+    #region Coroutines
+
+    IEnumerator RotateAnim()
+    {
+        enablePlayer = false;
+        float time = 0;
+        while(time < rotationDuration)
+        {
+            time += Time.deltaTime;
+            preview.transform.rotation = Quaternion.Euler(0, 0, -90 * (time / rotationDuration));
+            yield return null;
+        }
+
+        enablePlayer = true;
+    }
+
+    IEnumerator PlacementAnim()
+    {
+        enablePlayer = false;
+        if (preview != null)
+            Destroy(preview);
+
+        yield return new WaitForSeconds(placementDuration);
+
+        enablePlayer = true;
+        yield break;
+    }
+
+    #endregion
 }

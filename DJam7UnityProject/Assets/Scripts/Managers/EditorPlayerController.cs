@@ -11,7 +11,7 @@ public class EditorPlayerController : PlayerController
     protected override IEnumerator Start()
     {
         yield return null;
-        base.Start();
+        StartCoroutine(base.Start());
         currentBrush = set.brushes[0];
     }
 }

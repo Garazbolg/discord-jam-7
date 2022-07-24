@@ -169,3 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   set: {fileID: 11400000, guid: 1c43e3e1cf92a914c875e428e6d5af73, type: 2}
   randomFirst: 0
+  rotationDuration: 0.1
+  placementDuration: 0.4
+  currentBrush: {fileID: 0}
