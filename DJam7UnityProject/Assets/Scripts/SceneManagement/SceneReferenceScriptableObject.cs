@@ -40,7 +40,9 @@ public class SceneReferenceScriptableObject : ScriptableObject
 
     private void OnValidate()
     {
+#if UNITY_EDITOR
         scenePath = SceneAsset == null ? "" : UnityEditor.AssetDatabase.GetAssetPath(SceneAsset);
         SceneName = SceneAsset == null ? "" : SceneAsset.name;
+#endif
     }
 }

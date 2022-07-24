@@ -31,7 +31,7 @@ public class OpenMapEditor : UnityEditor.EditorWindow
         Open((Map)Selection.activeObject,true);
     }
 
-    async public static void Open(Map state, bool isEditor)
+    public static async void Open(Map state, bool isEditor)
     {
         EditorApplication.isPlaying = false;
         await System.Threading.Tasks.Task.Delay(100);
