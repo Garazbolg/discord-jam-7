@@ -353,6 +353,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137ac207628e45b44857eccf122d151c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brushToSet: {fileID: 0}
+  buttonRef: {fileID: 4969557114180509350}
+  isUndo: 1
+--- !u!114 &4969557114180509350 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 447062366681357222, guid: b75cbe151b8e7a14bbad4b40c36291e5, type: 3}
+  m_PrefabInstance: {fileID: 4810725141040481536}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4969557114180509344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4969557114180509351 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 447062366681357223, guid: b75cbe151b8e7a14bbad4b40c36291e5, type: 3}
@@ -508,6 +522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 137ac207628e45b44857eccf122d151c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brushToSet: {fileID: 0}
+  buttonRef: {fileID: 0}
+  isUndo: 0
 --- !u!224 &4969557115954152182 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 447062366681357223, guid: b75cbe151b8e7a14bbad4b40c36291e5, type: 3}

@@ -73,6 +73,7 @@ public class Brush : ScriptableObject
             position = position,
             toPlace = tiles.Clone() as TileDestination[],
             oldTiles = replaced.ToArray(),
+            sourceBrush = this,
         };
     }
 }

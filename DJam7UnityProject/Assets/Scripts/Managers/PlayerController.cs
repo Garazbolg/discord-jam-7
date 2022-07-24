@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+[DefaultExecutionOrder(-800)]
 public class PlayerController : MonoBehaviour
 {
     public BrushSet set;
-    public bool randomFirst = false;
     public float rotationDuration;
     public float placementDuration;
     
@@ -17,8 +17,10 @@ public class PlayerController : MonoBehaviour
     private readonly Stack<BrushCommand> unDone = new Stack<BrushCommand>();
     private GameObject preview;
     private bool enablePlayer = true;
+    protected Vector2Int lastPoint = Vector2Int.zero;
+    protected Vector2Int currentPoint;
 
-    protected virtual bool isEditor => false;
+    public virtual bool isEditor => false;
 
     protected virtual bool IsInputPlace => Input.GetMouseButtonDown(0);
     
@@ -26,7 +28,12 @@ public class PlayerController : MonoBehaviour
     {
         yield return null;
         cam = Camera.main;
-        currentBrush = randomFirst ? set.brushes[Random.Range(0,set.brushes.Length)]: set.brushes[0];
+        GameManager.Instance.context.player = this;
+
+        GameManager.Instance.context.brushQueue.Add(set.GetNext());
+        GameManager.Instance.context.brushQueue.Add(set.GetNext());
+        GameManager.Instance.context.brushQueue.Add(set.GetNext());
+        SetNextBrush();
     }
 
     protected virtual void Update()
@@ -35,25 +42,26 @@ public class PlayerController : MonoBehaviour
         
         var point = cam.ScreenToWorldPoint(Input.mousePosition);
         point += Vector3.one/2; //Offset because tile pivot is center
-        var position = new Vector2Int(Mathf.FloorToInt(point.x), Mathf.FloorToInt(point.y));
-        bool usable = currentBrush.CanUse(GameManager.Instance.context, position,isEditor);
+        currentPoint = new Vector2Int(Mathf.FloorToInt(point.x), Mathf.FloorToInt(point.y));
+        bool usable = currentBrush.CanUse(GameManager.Instance.context, currentPoint, isEditor);
 
         if(preview != null)
             Destroy(preview);
-        if(GameManager.Instance.context.state.GetTileAt(position) != null)
-            preview = GameManager.Instance.context.state.view.CreateBrushObject(currentBrush, position,usable);
+        if(GameManager.Instance.context.state.GetTileAt(currentPoint) != null)
+            preview = GameManager.Instance.context.state.view.CreateBrushObject(currentBrush, currentPoint, usable);
 
         if(Input.GetMouseButtonDown(1))
             Rotate();
 
         if (usable && IsInputPlace)
         {
-            var comand = currentBrush.GetCommand(GameManager.Instance.context, position);
+            lastPoint = currentPoint;
+            var comand = currentBrush.GetCommand(GameManager.Instance.context, currentPoint);
             comand.Do(GameManager.Instance.context);
             done.Push(comand);
             unDone.Clear();
-            if(!isEditor)
-                currentBrush = set.brushes[Random.Range(0, set.brushes.Length)];
+            if (!isEditor)
+                SetNextBrush();
             StartCoroutine(PlacementAnim());
         }
 
@@ -61,6 +69,21 @@ public class PlayerController : MonoBehaviour
         {
             Undo();
         }
+    }
+
+    public void SetNextBrush()
+    {
+        var queue = GameManager.Instance.context.brushQueue;
+        currentBrush = queue[0];
+        queue.RemoveAt(0);
+        if(queue.Count < 3)
+            queue.Add(set.GetNext());
+    }
+
+    public void ReverseBrush(Brush oldBrush)
+    {
+        GameManager.Instance.context.brushQueue.Insert(0,currentBrush);
+        currentBrush = oldBrush;
     }
 
     #region Commands
@@ -71,8 +94,6 @@ public class PlayerController : MonoBehaviour
 
     public void Undo()
     {
-        
-        
         var command = done.Pop();
         command.Undo(GameManager.Instance.context);
         unDone.Push(command);

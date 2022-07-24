@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class EditorPlayerController : PlayerController
 {
-    protected override bool isEditor => true;
-    protected override bool IsInputPlace => Input.GetMouseButton(0);
+    public override bool isEditor => true;
+    protected override bool IsInputPlace => Input.GetMouseButton(0) && lastPoint != currentPoint;
 
     protected override IEnumerator Start()
     {

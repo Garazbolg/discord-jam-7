@@ -10,6 +10,8 @@ public class GameContext
     public Constants constants;
     public Map state;
     public int score;
+    public List<Brush> brushQueue = new List<Brush>();
+    public PlayerController player;
 
     private HashSet<Vector2Int> visitedPoints;
 

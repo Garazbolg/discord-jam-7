@@ -7,6 +7,7 @@ public class BrushCommand
     public Brush.TileDestination[] toPlace;
     public Brush.TileDestination[] oldTiles;
     public int pointsGained;
+    public Brush sourceBrush;
 
     public void Do(GameContext context)
     {
@@ -25,7 +26,8 @@ public class BrushCommand
         }
         context.state.view.CreateBrushObject(this,false);
         var affected = context.GetAffected(positions);
-        context.state.view.PropagateAnim(affected,position);
+        if(!context.player.isEditor)
+            context.state.view.PropagateAnim(affected,position);
         pointsGained = context.ComputeScoreFor(affected);
         context.score += pointsGained;
 
@@ -39,6 +41,7 @@ public class BrushCommand
             var pos = position + td.destination;
             context.state.SetTileAt(pos, td.tile);
         }
+        context.player.ReverseBrush(sourceBrush);
         context.state.view.CreateBrushObject(this, true);
         context.score -= pointsGained;
     }
