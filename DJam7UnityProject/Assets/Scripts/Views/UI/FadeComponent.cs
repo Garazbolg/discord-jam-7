@@ -15,8 +15,11 @@ public class FadeComponent : MonoBehaviour
 
     public void Start()
     {
+        targetGraphics.enabled = true;
         if(FadeOnStart)
             StartCoroutine(FadeIn());
+        else
+            targetGraphics.CrossFadeAlpha(0,0,true);
     }
 
     public void StartFadeOut()
