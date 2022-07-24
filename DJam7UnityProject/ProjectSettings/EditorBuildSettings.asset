@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameEditor/EditorUI.unity
     guid: 1fda3ff917823274e8a7baeaf00089a5
+  - enabled: 1
+    path: Assets/Scenes/Game/Audio.unity
+    guid: a65d1f41ad79ff44d9c3715fea3d3e72
   m_configObjects: {}

@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class ImportString : MonoBehaviour
 {
     public TMP_InputField inputField;
-    public MapToLoad toLoad;
     public Button PlayCustom;
 
     public void LoadCustom()
