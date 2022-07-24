@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fe508c1fec3c648b3265033432313e, type: 3}
   m_Name: MapToLoad
   m_EditorClassIdentifier: 
-  map: {fileID: 11400000, guid: 9d10da511736c504ba98d9bfd8accea3, type: 2}
+  map: {fileID: 11400000, guid: c713353fade5f8749a73e35e274819c9, type: 2}
   defaultMap: {fileID: 11400000, guid: f476b538fe4f8fc4eb979a878263c004, type: 2}

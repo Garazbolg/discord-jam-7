@@ -35,7 +35,7 @@ public class Brush : ScriptableObject
         {
             var t = td.tile;
             var target = context.state.GetTileAt(position + td.destination);
-            if (target == null)
+            if (!td.OverrideTile && target == null)
                 return false;
             if (!isEditor && !t.canOverrideTiles.Contains(target) && !td.OverrideTile)
                 return false;
