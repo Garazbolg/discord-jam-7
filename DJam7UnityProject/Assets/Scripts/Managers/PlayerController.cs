@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     protected virtual IEnumerator Start()
     {
         yield return null;
+        set.Init();
         cam = Camera.main;
         GameManager.Instance.context.player = this;
         GameManager.Instance.context.brushQueue.Clear();

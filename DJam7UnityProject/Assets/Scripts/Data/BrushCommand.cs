@@ -6,7 +6,7 @@ public class BrushCommand
     public Vector2Int position;
     public Brush.TileDestination[] toPlace;
     public Brush.TileDestination[] oldTiles;
-    public int pointsGained;
+    public int pointsGained = 0;
     public Brush sourceBrush;
 
     public void Do(GameContext context)
@@ -28,8 +28,15 @@ public class BrushCommand
         var affected = context.GetAffected(positions);
         if(!context.player.isEditor)
             context.state.view.PropagateAnim(affected,position);
-        pointsGained = context.ComputeScoreFor(affected);
+        
+        if(!context.player.isEditor)
+            pointsGained = context.ComputeScoreFor(affected);
+        
         context.score += pointsGained;
+        if (context.score >= context.targetScore)
+        {
+            context.WinUI.SetActive(true);
+        }
 
         oldTiles = olds.ToArray();
     }

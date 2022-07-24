@@ -26,6 +26,7 @@ public class MapLoader : MonoBehaviour
         
         GameManager.Instance.context.LoadMap(loadTarget);
         GameManager.Instance.context.state.view = mapView;
+        GameManager.Instance.context.targetScore = loadTarget.targetScore;
         mapView.Init();
 
         PlayerController pc = null;

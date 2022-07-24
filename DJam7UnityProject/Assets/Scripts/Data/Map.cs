@@ -10,6 +10,7 @@ public class Map : ScriptableObject
     public Vector2Int size;
     public BrushSet overrideSet;
     public TileArray[] tiles;
+    public int targetScore = 500;
 
     public MapView view;
 

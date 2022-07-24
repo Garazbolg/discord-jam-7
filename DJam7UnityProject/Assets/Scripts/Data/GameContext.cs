@@ -12,6 +12,8 @@ public class GameContext
     public int score;
     public List<Brush> brushQueue = new List<Brush>();
     public PlayerController player;
+    public GameObject WinUI;
+    public int targetScore;
 
     private HashSet<Vector2Int> visitedPoints;
 

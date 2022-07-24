@@ -27,6 +27,7 @@ public class BrushSet : ScriptableObject
         {
             case NextMethod.Sequence:
                 index = (index + 1 + brushes.Length) % brushes.Length;
+                Debug.Log($"Loading from set {name} at {index} => {brushes[index].name}");
                 return brushes[index];
             case NextMethod.Random:
                 return brushes[Random.Range(0, brushes.Length)];

@@ -255,4 +255,5 @@ MonoBehaviour:
     - {fileID: 11400000, guid: f8c67fd919ea5cc4097cb9bd81e13e3e, type: 2}
     - {fileID: 11400000, guid: f8c67fd919ea5cc4097cb9bd81e13e3e, type: 2}
     - {fileID: 11400000, guid: f8c67fd919ea5cc4097cb9bd81e13e3e, type: 2}
+  targetScore: 696
   view: {fileID: 0}

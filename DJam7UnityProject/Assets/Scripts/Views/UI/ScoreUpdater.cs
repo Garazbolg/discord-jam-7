@@ -17,7 +17,7 @@ public class ScoreUpdater : MonoBehaviour
     private void Start()
     {
         current = targetCurrentScore = targetScore = 0;
-        text.text = current.ToString();
+        text.text = GetString();
     }
 
     void Update()
@@ -40,11 +40,16 @@ public class ScoreUpdater : MonoBehaviour
         {
             time += Time.deltaTime;
             current = Mathf.FloorToInt(Mathf.Lerp(oldScore, targetCurrentScore + 0.1f, time / duration));
-            text.text = current.ToString();
+            text.text = GetString();
             yield return null;
         }
 
         current = targetCurrentScore;
-        text.text = current.ToString();
+        text.text = GetString();
+    }
+
+    private string GetString()
+    {
+        return $"{current}/{GameManager.Instance.context.targetScore}";
     }
 }
