@@ -9,17 +9,22 @@ public class FadeComponent : MonoBehaviour
 {
     public bool FadeOnStart = false;
     public Image targetGraphics;
-    public float FadeDuration => 1f;
+    public float FadeDuration => .3f;
 
     public UnityEvent afterFade;
 
-    public void Start()
+    public void Awake()
     {
         targetGraphics.enabled = true;
-        if(FadeOnStart)
+    }
+
+    public void Start()
+    {
+        if (FadeOnStart)
+        {
+            targetGraphics.CrossFadeAlpha(1, 0, true);
             StartCoroutine(FadeIn());
-        else
-            targetGraphics.CrossFadeAlpha(0,0,true);
+        }
     }
 
     public void StartFadeOut()
@@ -51,5 +56,11 @@ public class FadeComponent : MonoBehaviour
         targetGraphics.CrossFadeAlpha(1,0,true);
         
         afterFade?.Invoke();
+    }
+
+    private void OnValidate()
+    {
+        if(targetGraphics != null)
+            targetGraphics.enabled = false;
     }
 }
