@@ -89,6 +89,9 @@ public class MapView : MonoBehaviour
     #region Animation
 
     public float propagationDelay = .75f;
+
+    public AudioClip[] clips;
+    public AudioSource source;
     
     public void PropagateAnim(IEnumerable<Vector2Int> targets, Vector2Int origin)
     {
@@ -109,12 +112,18 @@ public class MapView : MonoBehaviour
             positions[OrthoDistance(target,origin)].Add(target);
         }
 
-        foreach (var list in positions)
+        for (var index = 0; index < positions.Length; index++)
         {
+            var list = positions[index];
             foreach (var pos in list)
             {
                 var tv = GetTile(pos.x, pos.y);
                 tv.StartAnim();
+            }
+
+            if (clips.Length > index && clips[index] != null)
+            {
+                source.PlayOneShot(clips[index]);
             }
 
             yield return new WaitForSeconds(propagationDelay);

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1267c26021de7547b673575b4b6555f, type: 3}
-  m_Name: MainMenu
+  m_Script: {fileID: 11500000, guid: 1b9644ff7415cfb46a1a58358ab5790c, type: 3}
+  m_Name: Audio
   m_EditorClassIdentifier: 
-  scenes:
-  - {fileID: 11400000, guid: 30389357ef1f37a4997a34bf4ef518a6, type: 2}
-  - {fileID: 11400000, guid: e9a305e77dc60e14db0931088f10c363, type: 2}
+  SceneAsset: {fileID: 102900000, guid: a65d1f41ad79ff44d9c3715fea3d3e72, type: 3}
+  scenePath: Assets/Scenes/Game/Audio.unity
+  SceneName: Audio
