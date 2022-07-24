@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf965f3aad27aa44083d520c28c1cd41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateToLoad: {fileID: 11400000, guid: 1402578c4db12ff4ba110f4d6e2643b7, type: 2}
+  stateToLoad: {fileID: 11400000, guid: ef9b8d0492b902845a50021b568ae465, type: 2}
 --- !u!4 &554815718
 Transform:
   m_ObjectHideFlags: 0
