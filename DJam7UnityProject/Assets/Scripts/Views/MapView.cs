@@ -31,7 +31,7 @@ public class MapView : MonoBehaviour
     {
         var tileView = Instantiate(GameManager.Instance.context.constants.TilePrefab, transform);
         tileView.transform.position = new Vector3(x,y);
-        tileView.SetSprite(tile.image, spriteOrder);
+        tileView.SetSprite(tile.image, tile.happyImage, spriteOrder);
         if(views[x].Views[y] != null)
             Destroy(views[x].Views[y].gameObject);
         views[x].Views[y] = tileView;
@@ -53,7 +53,7 @@ public class MapView : MonoBehaviour
         {
             var tileView = Instantiate(prefab,go.transform);
             tileView.transform.localPosition = new Vector3(td.destination.x, td.destination.y);
-            tileView.SetSprite(td.tile.image,4);
+            tileView.SetSprite(td.tile.image,td.tile.happyImage,4);
         }
 
         return go;

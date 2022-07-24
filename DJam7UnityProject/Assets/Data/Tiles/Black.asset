@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Black
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: ceb75f1002883494f891efadc44619d1, type: 3}
+  happyImage:
+  - {fileID: 21300000, guid: ceb75f1002883494f891efadc44619d1, type: 3}
   prefab: {fileID: 0}
   canOverrideTiles:
   - {fileID: 11400000, guid: b70cd85d5cf3b1849bdf3740b63c5a33, type: 2}

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Orange
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 1fdcbfe36e5bceb4895de7d5ca572bdd, type: 3}
+  happyImage:
+  - {fileID: 21300000, guid: 046f9efb45b94414eb8646dcedcc9a11, type: 3}
+  - {fileID: 21300000, guid: 0a44e354f64001149a6c8420c6487be4, type: 3}
   prefab: {fileID: 0}
   canOverrideTiles:
   - {fileID: 11400000, guid: b70cd85d5cf3b1849bdf3740b63c5a33, type: 2}

@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Green
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 166ad9f94a6147249ad22ba64a389658, type: 3}
+  happyImage:
+  - {fileID: 21300000, guid: 9e53aa0a2c696024ca758e6d8b4dffb8, type: 3}
+  - {fileID: 21300000, guid: 911e179a44b635a49a799ecf68aa0b0e, type: 3}
   prefab: {fileID: 0}
   canOverrideTiles:
   - {fileID: 11400000, guid: b70cd85d5cf3b1849bdf3740b63c5a33, type: 2}

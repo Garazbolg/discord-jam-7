@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Wall
   m_EditorClassIdentifier: 
   image: {fileID: 21300000, guid: 42666836afda6754a8223f7be1603132, type: 3}
+  happyImage:
+  - {fileID: 21300000, guid: 42666836afda6754a8223f7be1603132, type: 3}
   prefab: {fileID: 0}
   canOverrideTiles:
   - {fileID: 11400000, guid: 65853a1c8e82bdc4a87f18e7c50be637, type: 2}

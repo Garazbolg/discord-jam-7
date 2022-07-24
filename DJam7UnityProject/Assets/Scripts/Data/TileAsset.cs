@@ -5,6 +5,7 @@ using UnityEngine;
 public class TileAsset : ScriptableObject
 {
     public Sprite image;
+    public Sprite[] happyImage;
     public GameObject prefab;
     public List<TileAsset> canOverrideTiles;
     public List<TileAsset> propagatesTo;
