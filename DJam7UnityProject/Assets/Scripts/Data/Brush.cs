@@ -9,6 +9,7 @@ public class Brush : ScriptableObject
     {
         public TileAsset tile;
         public Vector2Int destination;
+        public bool OverrideTile;
     }
 
     public TileDestination[] tiles;
@@ -36,10 +37,10 @@ public class Brush : ScriptableObject
             var target = context.state.GetTileAt(position + td.destination);
             if (target == null)
                 return false;
-            if (!isEditor && !t.canOverrideTiles.Contains(target))
+            if (!isEditor && !t.canOverrideTiles.Contains(target) && !td.OverrideTile)
                 return false;
 
-            if (flag) continue;
+            if (flag || td.OverrideTile) continue;
             foreach (var dir in context.constants.directions)
             {
                 var adj = context.state.GetTileAt(position + td.destination + dir);

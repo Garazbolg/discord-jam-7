@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: PlayerSet
   m_EditorClassIdentifier: 
   brushes:
+  - {fileID: 11400000, guid: 3d69d06b267b9994aaa526714012b7bf, type: 2}
+  - {fileID: 11400000, guid: 5ff80ad16a9484a479c73e1e0ceadce3, type: 2}
+  - {fileID: 11400000, guid: a3041a63baeb95041b62e5ad7dd0eb5d, type: 2}
+  - {fileID: 11400000, guid: be574d28212fc63419e811c90d26ac8a, type: 2}
+  - {fileID: 11400000, guid: 9b5282ad825f0844bb4f3bb82a03a97f, type: 2}
+  - {fileID: 11400000, guid: 97a7b7399310ca24486ed27d1f5dc06f, type: 2}
   - {fileID: 11400000, guid: de209b0e69289754abb4efe2a97c4e96, type: 2}
   - {fileID: 11400000, guid: 50f5892b3f8507d46bd49f9aa3b6dc0b, type: 2}
   - {fileID: 11400000, guid: d515ca6fbad758b4daad32eea0a842e9, type: 2}
@@ -23,7 +29,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cbab3e969c6c4774bac109a3e3e3c8e4, type: 2}
   - {fileID: 11400000, guid: ff2885aa9d7b2e2428eedb5d963a84ff, type: 2}
   - {fileID: 11400000, guid: 67c231f32e28b7e4f952e9d3c7a69be1, type: 2}
-  - {fileID: 11400000, guid: 3d69d06b267b9994aaa526714012b7bf, type: 2}
   - {fileID: 11400000, guid: 75779889c0d833d4da6a5066b69a95d3, type: 2}
   - {fileID: 11400000, guid: 098b76f5d61b31247be2293065a1fb78, type: 2}
   - {fileID: 11400000, guid: d30866b712c673b4ca76355203f24865, type: 2}
