@@ -14,11 +14,11 @@ public class BrushSet : ScriptableObject
     public NextMethod nextMethod;
     public Brush[] brushes;
 
-    private int index = 0;
+    private int index = -1;
 
     public void Init()
     {
-        index = 0;
+        index = -1;
     }
 
     public Brush GetNext()

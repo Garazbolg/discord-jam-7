@@ -20,6 +20,8 @@ public class LevelSelectSettings : MonoBehaviour
 
     public void SelectMap()
     {
-        toLoad.map = mapToLoad;
+        var go = new GameObject("MapOverrider");
+        go.AddComponent<MapOverrider>().overrideMap = mapToLoad;
+        DontDestroyOnLoad(go);
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc5fd486bb081034a8a572935a0067e2, type: 3}
   m_Name: PlayerSet
   m_EditorClassIdentifier: 
+  nextMethod: 1
   brushes:
   - {fileID: 11400000, guid: 3d69d06b267b9994aaa526714012b7bf, type: 2}
   - {fileID: 11400000, guid: 5ff80ad16a9484a479c73e1e0ceadce3, type: 2}

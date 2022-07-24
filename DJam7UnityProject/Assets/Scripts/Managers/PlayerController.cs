@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         yield return null;
         cam = Camera.main;
         GameManager.Instance.context.player = this;
-
+        GameManager.Instance.context.brushQueue.Clear();
         GameManager.Instance.context.brushQueue.Add(set.GetNext());
         GameManager.Instance.context.brushQueue.Add(set.GetNext());
         GameManager.Instance.context.brushQueue.Add(set.GetNext());
