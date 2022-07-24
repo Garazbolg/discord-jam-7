@@ -44,7 +44,7 @@ public class Brush : ScriptableObject
             foreach (var dir in context.constants.directions)
             {
                 var adj = context.state.GetTileAt(position + td.destination + dir);
-                if (adj.propagatesTo.Contains(t))
+                if (adj != null && adj.propagatesTo.Contains(t))
                 {
                     flag = true;
                     break;

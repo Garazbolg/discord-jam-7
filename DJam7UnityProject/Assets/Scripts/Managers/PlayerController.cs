@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 [DefaultExecutionOrder(-800)]
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour
             if (!isEditor)
                 SetNextBrush();
             StartCoroutine(PlacementAnim());
+            OnChanged();
         }
 
         if (done.Count > 0 && Input.GetMouseButtonDown(2))
@@ -97,6 +99,7 @@ public class PlayerController : MonoBehaviour
         var command = done.Pop();
         command.Undo(GameManager.Instance.context);
         unDone.Push(command);
+        OnChanged();
     }
     
     public bool CanRedo()
@@ -111,6 +114,7 @@ public class PlayerController : MonoBehaviour
         var command = unDone.Pop();
         command.Do(GameManager.Instance.context);
         done.Push(command);
+        OnChanged();
     }
 
     public void Rotate()
@@ -147,6 +151,13 @@ public class PlayerController : MonoBehaviour
 
         enablePlayer = true;
         yield break;
+    }
+
+
+    public Action onChangeEvent = null;
+    public void OnChanged()
+    {
+        onChangeEvent?.Invoke();
     }
 
     #endregion

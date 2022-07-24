@@ -10,9 +10,21 @@ public class MapLoader : MonoBehaviour
 
     IEnumerator Start()
     {
-        if (toLoad.map == null)
-            toLoad.map = toLoad.defaultMap;
-        GameManager.Instance.context.LoadMap(toLoad.map);
+        MapOverrider mapOverrider = null;
+        Map loadTarget = null;
+        if ((mapOverrider = FindObjectOfType<MapOverrider>()) != null)
+        {
+            loadTarget = mapOverrider.overrideMap;
+            Destroy(mapOverrider.gameObject);
+        }
+        else
+        {
+            if (toLoad.map == null)
+                toLoad.map = toLoad.defaultMap;
+            loadTarget = toLoad.map;
+        }
+        
+        GameManager.Instance.context.LoadMap(loadTarget);
         GameManager.Instance.context.state.view = mapView;
         mapView.Init();
 
@@ -21,9 +33,9 @@ public class MapLoader : MonoBehaviour
         {
             yield return null;
         }
-        if (toLoad.map.overrideSet != null)
+        if (loadTarget.overrideSet != null)
         {
-            pc.set = toLoad.map.overrideSet;
+            pc.set = loadTarget.overrideSet;
         }
     }
 }
