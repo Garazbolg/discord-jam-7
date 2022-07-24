@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/MainMenu.unity
     guid: 7774c552364951640931ff1b90f3cd62
   - enabled: 1
+    path: Assets/Scenes/Game/Blank.unity
+    guid: d96f0b937e934c4458ee36efb0d414b3
+  - enabled: 1
     path: Assets/Scenes/GameEditor/EditorPlayer.unity
     guid: bc974e43f3af2e34ab6ce20411b3d29d
   - enabled: 1

@@ -1,26 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class StateLoader : MonoBehaviour
 {
-    private static ApplicationState currentState = null;
     public ApplicationState stateToLoad;
 
     public void Load()
     {
-        if(currentState != null)
-            currentState.Unload();
-        currentState = stateToLoad;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Blank");
+
         stateToLoad.Load();
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Blank");
     }
 
     public void Quit()
     {
 #if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
