@@ -8,8 +8,9 @@ public class EditorPlayerController : PlayerController
 {
     protected override bool isEditor => true;
 
-    protected override void Start()
+    protected override IEnumerator Start()
     {
+        yield return null;
         base.Start();
         currentBrush = set.brushes[0];
     }
